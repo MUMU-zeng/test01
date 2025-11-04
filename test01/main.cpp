@@ -75,7 +75,7 @@ int main()
 	cout << arr[0] << endl;
 	cout << arr << endl;
 	
-	cout << "master modify main";
+	cout << "client modify main";
 	
 	
 	return 0;
