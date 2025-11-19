@@ -72,9 +72,15 @@ int main()
 {
 	int arr[2][3] = {300,200,400,600,100,250};
 	
-	cout << arr[0] << endl;
-	cout << arr << endl;
-	
+
+	int a = 11;
+	int* p = &a;
+	int** pp = &p;
+	cout << "p = " << p << endl;
+	cout << "p的地址为：" << &p << endl;
+	cout << "p占用空间为：" << sizeof(p) << endl;
+	cout << "pp = " << pp << endl;
+	cout << "pp占用空间为：" << sizeof(pp) << endl;
 	cout << "client modify main";
 	
 	
