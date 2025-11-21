@@ -1,4 +1,6 @@
 #include <iostream>
+#include "test.h"
+
 using namespace std;
 
 void coutArr(int* arr, int length) 
@@ -70,17 +72,29 @@ void arrAscend(int* arr, int length)
 
 int main() 
 {
-	int arr[2][3] = {300,200,400,600,100,250};
+	struct ListNode* arr1 = (struct ListNode*)malloc(sizeof(struct ListNode));
+	struct ListNode* arr2 = (struct ListNode*)malloc(sizeof(struct ListNode));
+	struct ListNode* parr1 = arr1;
+	struct ListNode* parr2 = arr2;
+	for (int i = 0; i < 2; i++) {
+		if(i != 0)	arr1 = arr1->next;
+		arr1->val = 2 + i * 2;
+		arr1->next = (struct ListNode*)malloc(sizeof(struct ListNode));
+		
+	}
+	arr1->next = NULL;
+	for (int i = 0; i < 3; i++) {
+		if (i != 0)	arr2 = arr2->next;
+		arr2->val = 2 + i * 2;
+		arr2->next = (struct ListNode*)malloc(sizeof(struct ListNode));
+	}
+	arr2->next = NULL;
+	struct ListNode* result = addTwoNumbers(parr1, parr2);
+	while (result != NULL) {
+		cout << result->val << "\t";
+		result = result->next;
+	}
 	
-
-	int a = 11;
-	int* p = &a;
-	int** pp = &p;
-	cout << "p = " << p << endl;
-	cout << "p的地址为：" << &p << endl;
-	cout << "p占用空间为：" << sizeof(p) << endl;
-	cout << "pp = " << pp << endl;
-	cout << "pp占用空间为：" << sizeof(pp) << endl;
 	cout << "client modify main";
 	
 	
